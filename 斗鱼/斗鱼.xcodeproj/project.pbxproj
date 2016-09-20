@@ -13,6 +13,13 @@
 		F937BD351D9051EC00B70AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F937BD341D9051EC00B70AE2 /* Assets.xcassets */; };
 		F937BD381D9051EC00B70AE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD361D9051EC00B70AE2 /* LaunchScreen.storyboard */; };
 		F937BD431D9051EC00B70AE2 /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BD421D9051EC00B70AE2 /* __UITests.swift */; };
+		F937BD5C1D9057C900B70AE2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD5A1D9057C900B70AE2 /* Home.storyboard */; };
+		F937BD5F1D90583B00B70AE2 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD5D1D90583B00B70AE2 /* Live.storyboard */; };
+		F937BD621D90585100B70AE2 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD601D90585100B70AE2 /* Follow.storyboard */; };
+		F937BD671D9058EF00B70AE2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD651D9058EF00B70AE2 /* Profile.storyboard */; };
+		F937BD7A1D905E4B00B70AE2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BD791D905E4B00B70AE2 /* MainViewController.swift */; };
+		F937BD7C1D905ED500B70AE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BD7B1D905ED500B70AE2 /* HomeViewController.swift */; };
+		F9FF34FD1D91005F0007EE37 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FF34FC1D91005F0007EE37 /* UIBarButtonItem-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		F937BD3E1D9051EC00B70AE2 /* 斗鱼UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "斗鱼UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F937BD421D9051EC00B70AE2 /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		F937BD441D9051EC00B70AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F937BD5B1D9057C900B70AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "斗鱼/Base.lproj/Home.storyboard"; sourceTree = SOURCE_ROOT; };
+		F937BD5E1D90583B00B70AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "斗鱼/Base.lproj/Live.storyboard"; sourceTree = SOURCE_ROOT; };
+		F937BD611D90585100B70AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "斗鱼/Base.lproj/Follow.storyboard"; sourceTree = SOURCE_ROOT; };
+		F937BD661D9058EF00B70AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "斗鱼/Base.lproj/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
+		F937BD791D905E4B00B70AE2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F937BD7B1D905ED500B70AE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F9FF34FC1D91005F0007EE37 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +94,6 @@
 				F937BD531D90541400B70AE2 /* Casses */,
 				F937BD2D1D9051EC00B70AE2 /* AppDelegate.swift */,
 				F937BD2F1D9051EC00B70AE2 /* ViewController.swift */,
-				F937BD311D9051EC00B70AE2 /* Main.storyboard */,
 				F937BD341D9051EC00B70AE2 /* Assets.xcassets */,
 				F937BD361D9051EC00B70AE2 /* LaunchScreen.storyboard */,
 				F937BD391D9051EC00B70AE2 /* Info.plist */,
@@ -113,6 +126,10 @@
 		F937BD541D90541400B70AE2 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				F937BD6B1D905D2000B70AE2 /* Model */,
+				F937BD6C1D905D2000B70AE2 /* View */,
+				F937BD6A1D905D0B00B70AE2 /* Controller */,
+				F937BD601D90585100B70AE2 /* Follow.storyboard */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -120,6 +137,10 @@
 		F937BD551D90541400B70AE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F937BD6D1D905D4000B70AE2 /* Controller */,
+				F937BD6E1D905D4000B70AE2 /* Model */,
+				F937BD6F1D905D4000B70AE2 /* View */,
+				F937BD5A1D9057C900B70AE2 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -127,6 +148,10 @@
 		F937BD561D90541400B70AE2 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				F937BD701D905D5800B70AE2 /* Controller */,
+				F937BD711D905D5800B70AE2 /* Model */,
+				F937BD721D905D5800B70AE2 /* View */,
+				F937BD5D1D90583B00B70AE2 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -134,6 +159,10 @@
 		F937BD571D90541400B70AE2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F937BD731D905D7B00B70AE2 /* Controller */,
+				F937BD741D905D7B00B70AE2 /* Model */,
+				F937BD751D905D7B00B70AE2 /* View */,
+				F937BD311D9051EC00B70AE2 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -141,6 +170,10 @@
 		F937BD581D90541400B70AE2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F937BD761D905D9400B70AE2 /* Controller */,
+				F937BD771D905D9400B70AE2 /* Model */,
+				F937BD781D905D9400B70AE2 /* View */,
+				F937BD651D9058EF00B70AE2 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -148,8 +181,124 @@
 		F937BD591D90541400B70AE2 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				F9FF34F71D90FF9E0007EE37 /* Extension */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		F937BD6A1D905D0B00B70AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F937BD6B1D905D2000B70AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F937BD6C1D905D2000B70AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F937BD6D1D905D4000B70AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F937BD7B1D905ED500B70AE2 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F937BD6E1D905D4000B70AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F937BD6F1D905D4000B70AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F937BD701D905D5800B70AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F937BD711D905D5800B70AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F937BD721D905D5800B70AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F937BD731D905D7B00B70AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F937BD791D905E4B00B70AE2 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F937BD741D905D7B00B70AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F937BD751D905D7B00B70AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F937BD761D905D9400B70AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F937BD771D905D9400B70AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F937BD781D905D9400B70AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9FF34F71D90FF9E0007EE37 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F9FF34FC1D91005F0007EE37 /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +388,10 @@
 				F937BD381D9051EC00B70AE2 /* LaunchScreen.storyboard in Resources */,
 				F937BD351D9051EC00B70AE2 /* Assets.xcassets in Resources */,
 				F937BD331D9051EC00B70AE2 /* Main.storyboard in Resources */,
+				F937BD5F1D90583B00B70AE2 /* Live.storyboard in Resources */,
+				F937BD5C1D9057C900B70AE2 /* Home.storyboard in Resources */,
+				F937BD671D9058EF00B70AE2 /* Profile.storyboard in Resources */,
+				F937BD621D90585100B70AE2 /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FF34FD1D91005F0007EE37 /* UIBarButtonItem-Extension.swift in Sources */,
+				F937BD7A1D905E4B00B70AE2 /* MainViewController.swift in Sources */,
 				F937BD301D9051EC00B70AE2 /* ViewController.swift in Sources */,
 				F937BD2E1D9051EC00B70AE2 /* AppDelegate.swift in Sources */,
+				F937BD7C1D905ED500B70AE2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +442,7 @@
 				F937BD321D9051EC00B70AE2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F937BD361D9051EC00B70AE2 /* LaunchScreen.storyboard */ = {
@@ -294,6 +451,42 @@
 				F937BD371D9051EC00B70AE2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F937BD5A1D9057C900B70AE2 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F937BD5B1D9057C900B70AE2 /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		F937BD5D1D90583B00B70AE2 /* Live.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F937BD5E1D90583B00B70AE2 /* Base */,
+			);
+			name = Live.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		F937BD601D90585100B70AE2 /* Follow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F937BD611D90585100B70AE2 /* Base */,
+			);
+			name = Follow.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		F937BD651D9058EF00B70AE2 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F937BD661D9058EF00B70AE2 /* Base */,
+			);
+			name = Profile.storyboard;
+			path = ../Main;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -465,6 +658,7 @@
 				F937BD491D9051EC00B70AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F937BD4A1D9051EC00B70AE2 /* Build configuration list for PBXNativeTarget "斗鱼UITests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +667,7 @@
 				F937BD4C1D9051EC00B70AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
