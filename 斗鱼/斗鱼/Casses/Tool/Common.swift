@@ -8,7 +8,7 @@
 
 import UIKit
 
-let  kStstusBarH: CGFloat = 20
+let  kStatusBarH: CGFloat = 20
 
 let kNavigationBarH: CGFloat = 44
 
