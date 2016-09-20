@@ -114,11 +114,7 @@ extension PageTitleView{
             
             //4. label添加到scrollView中
             scrollview.addSubview(label)
-            
-            
         }
-        
-    
     }
 }
 

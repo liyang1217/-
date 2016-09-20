@@ -34,7 +34,6 @@ class HomeViewController: UIViewController {
             childVCs.append(VC)
         }
         
-        
         let contentView = PageContentView(frame: contentFrame, childVCs: childVCs, parentController: self)
         return contentView
         
@@ -45,7 +44,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
     }
 
 }
