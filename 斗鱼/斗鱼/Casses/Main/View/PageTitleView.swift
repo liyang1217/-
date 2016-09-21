@@ -8,12 +8,23 @@
 
 import UIKit
 
+//加上class表示这个协议只能被类遵守, 不写的话可能被别的遵守
+//点击titleLabel,通知PageContentView发生相应的变化
+protocol PageTitleViewDelegate : class {
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int)
+}
+
 private let kScrollLineH: CGFloat = 2
 
 class PageTitleView: UIView {
+    
+    //定义代理属性
+    weak var delegate:PageTitleViewDelegate?
 
     //定义属性
     var titles: [NSString]
+    var currentIndex : Int = 0
+    
     
     // 懒加载属性
     lazy var scrollview : UIScrollView = {
@@ -114,10 +125,61 @@ extension PageTitleView{
             
             //4. label添加到scrollView中
             scrollview.addSubview(label)
+            
+            //5. 给label添加手势,响应点击事件
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
 }
 
+//监听label的点击事件
+extension PageTitleView{
+    //事件监听需要加上@objc
+    @objc func titleLabelClick(tapGes: UITapGestureRecognizer){
+    
+        //1. 获取当前label的下标值
+        guard let currentLabel = tapGes.view as? UILabel else { return }
+        
+        //2. 获取之前的label
+        let oldLabel = titleLabels[currentIndex]
+        
+        //3. 切换文字的颜色
+        currentLabel.textColor = UIColor.orange
+        oldLabel.textColor = UIColor.darkGray
+        
+        //4. 保存最新label下标值
+        currentIndex = currentLabel.tag
+    
+        //5. 滑条位置的变化
+        let scrollViewX = CGFloat(currentIndex) * scrollLine.frame.width
+        UIView.animate(withDuration: 0.15) { 
+            self.scrollLine.frame.origin.x = scrollViewX
+        }
+        
+        //6. 通知代理
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+    }
+ 
+}
+
+//对外暴露的方法
+extension PageTitleView{
+
+    func setTitleWithProgress(progress: CGFloat, sourceIndex: Int, targetIndex: Int){
+        //1. 去除sourceLabel/targetLabel
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        //2. 处理滑块的逻辑
+        //总共要滑动的距离
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        //已经滑动的距离
+        let moveX = moveTotalX * progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+    }
+}
 
 
 
