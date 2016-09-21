@@ -22,6 +22,7 @@ class PageContentView: UIView {
     weak var parentController : UIViewController?
     var startOffsetX : CGFloat = 0
     weak var delegate : PageContentViewDelegate?
+    var isForbidScrollDelegate: Bool = false
     
     // 懒加载属性
     lazy var collectionView : UICollectionView = { [weak self] in
@@ -84,12 +85,19 @@ extension PageContentView : UICollectionViewDelegate{
     //监测scrollView的滚动
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        isForbidScrollDelegate = false
+        
         //当前X的偏移量
         startOffsetX = scrollView.contentOffset.x
         
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        //0. 判断是否是点击事件,如果事件事件就不允许执行
+        if isForbidScrollDelegate { return }
+        
         //1.获取需要的数据
         //滑动的进度
         var progress : CGFloat = 0
@@ -169,6 +177,10 @@ extension PageContentView{
     
     func setCurrentIndex(currentIndex : Int){
         
+        //1. 记录禁止执行代理方法
+        isForbidScrollDelegate = true
+        
+        //2. 滚动到正确的位置
         let offSetX = CGFloat(currentIndex) * collectionView.frame.width
         
         collectionView.setContentOffset(CGPoint(x: offSetX, y: 0), animated: false)
