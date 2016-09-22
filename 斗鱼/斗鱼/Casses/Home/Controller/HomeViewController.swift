@@ -13,7 +13,7 @@ private let kTitleViewH: CGFloat = 40
 class HomeViewController: UIViewController {
 
     //懒加载属性
-     lazy var pageTitleView: PageTitleView = {[weak self] in
+     fileprivate lazy var pageTitleView: PageTitleView = {[weak self] in
     
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
@@ -22,14 +22,14 @@ class HomeViewController: UIViewController {
         return titleView
     }()
     
-    lazy var pageContentView: PageContentView = { [weak self] in
+    fileprivate lazy var pageContentView: PageContentView = { [weak self] in
         //1. 确定内容的frame
-        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabBarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         //2. 确定所有的子控制器
         var childVCs = [UIViewController]()
-        for _ in 0..<4{
-        
+        childVCs.append(RecommendViewController())
+        for _ in 0..<3{
             let VC = UIViewController()
             VC.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVCs.append(VC)
@@ -41,19 +41,17 @@ class HomeViewController: UIViewController {
         
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
-
 }
 
 //mark - 设置UI界面
 extension HomeViewController{
     
-    func setupUI(){
+    fileprivate func setupUI(){
         //0. 不需要调整UIScrollview的内边距
         automaticallyAdjustsScrollViewInsets = false
         
@@ -69,7 +67,7 @@ extension HomeViewController{
         
     }
     
-    func setupNavigationBar(){
+    fileprivate func setupNavigationBar(){
     //1. 设置左侧的item
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
@@ -83,7 +81,6 @@ extension HomeViewController{
         
         navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
     }
-    
 }
 
 //遵守PageTitleViewDelegate的协议
@@ -92,7 +89,6 @@ extension HomeViewController : PageTitleViewDelegate{
     func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
         pageContentView.setCurrentIndex(currentIndex: index)
     }
-
 }
 
 //遵守PageContentViewDelegate的协议

@@ -18,14 +18,14 @@ private let contentCellID = "contentCellID"
 class PageContentView: UIView {
 
     // 定义属性
-    var childVCs : [UIViewController]
-    weak var parentController : UIViewController?
-    var startOffsetX : CGFloat = 0
+    fileprivate var childVCs : [UIViewController]
+    fileprivate weak var parentController : UIViewController?
+    fileprivate var startOffsetX : CGFloat = 0
     weak var delegate : PageContentViewDelegate?
-    var isForbidScrollDelegate: Bool = false
+    fileprivate var isForbidScrollDelegate: Bool = false
     
     // 懒加载属性
-    lazy var collectionView : UICollectionView = { [weak self] in
+    fileprivate lazy var collectionView : UICollectionView = { [weak self] in
     
         //闭包里面用self的话需要用weak修饰,以免产生循环引用
         //可选链的返回类型一定是可选类型
@@ -66,9 +66,9 @@ class PageContentView: UIView {
 }
 
 //设置UI
-private extension PageContentView{
+extension PageContentView{
 
-       func setupUI(){
+       fileprivate func setupUI(){
     
         //1. 将所有的子控制器添加到父控制器中
         for childVC in childVCs {

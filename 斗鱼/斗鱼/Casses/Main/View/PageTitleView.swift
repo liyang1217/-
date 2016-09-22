@@ -24,17 +24,17 @@ private let kSelectedColor: (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 class PageTitleView: UIView {
     
     //定义代理属性
-    weak var delegate:PageTitleViewDelegate?
+     weak var delegate:PageTitleViewDelegate?
     
     
 
     //定义属性
-    var titles: [NSString]
-    var currentIndex : Int = 0
+    fileprivate var titles: [NSString]
+    fileprivate var currentIndex : Int = 0
     
     
     // 懒加载属性
-    lazy var scrollview : UIScrollView = {
+    fileprivate lazy var scrollview : UIScrollView = {
     
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
@@ -45,7 +45,7 @@ class PageTitleView: UIView {
         
     }()
     
-    lazy var scrollLine :  UIView = {
+    fileprivate lazy var scrollLine :  UIView = {
     
         let scrollLine = UIView()
         scrollLine.backgroundColor = UIColor.orange
@@ -53,7 +53,7 @@ class PageTitleView: UIView {
     
     }()
     
-    lazy var titleLabels : [UILabel] = [UILabel]()
+    fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
     
     
     //自定义构造函数
@@ -71,7 +71,7 @@ class PageTitleView: UIView {
 
 extension PageTitleView{
 
-    func setupUI(){
+    fileprivate func setupUI(){
     
         //1. 添加UIscrollView
         addSubview(scrollview)
@@ -84,7 +84,7 @@ extension PageTitleView{
         setupBottonMenuAndScrollLine()
     }
     
-    private func setupBottonMenuAndScrollLine(){
+    fileprivate func setupBottonMenuAndScrollLine(){
     
         //1. 添加底线
         let bottonLine = UIView()
@@ -104,7 +104,7 @@ extension PageTitleView{
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - kScrollLineH, width: firstLabel.frame.width, height: kScrollLineH + lineH)
     }
     
-    private func setupTitleLabels(){
+    fileprivate func setupTitleLabels(){
         
         //设置label的frame值
         let labelW: CGFloat = frame.width / CGFloat(titles.count)
@@ -144,7 +144,7 @@ extension PageTitleView{
 //监听label的点击事件
 extension PageTitleView{
     //事件监听需要加上@objc
-    @objc func titleLabelClick(tapGes: UITapGestureRecognizer){
+    @objc fileprivate func titleLabelClick(tapGes: UITapGestureRecognizer){
     
         //1. 获取当前label的下标值
         guard let currentLabel = tapGes.view as? UILabel else { return }

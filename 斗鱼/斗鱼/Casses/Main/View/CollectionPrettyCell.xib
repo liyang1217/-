@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionPrettyCell" customModule="斗鱼" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="143" height="195"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="143" height="195"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-Lf-prm">
+                        <frame key="frameInset" minX="101" minY="166"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BARCA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiR-ry-k4u">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="a82-MM-cjN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bm-Ow-4UU">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="AmB-bO-q0n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="BARCA" image="ico_location">
+                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="evr-gw-Blc">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRk-yj-pyz">
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="K2o-yk-UAx"/>
+                            <constraint firstAttribute="height" constant="20" id="urD-oH-Q0K"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="BRk-yj-pyz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="FhR-Oi-T5W"/>
+                <constraint firstAttribute="bottom" secondItem="6bm-Ow-4UU" secondAttribute="bottom" constant="10" id="KcA-L1-3cC"/>
+                <constraint firstItem="PiR-ry-k4u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U3N-mi-sfq"/>
+                <constraint firstItem="6bm-Ow-4UU" firstAttribute="centerY" secondItem="PiR-ry-k4u" secondAttribute="centerY" id="Xbs-MC-IAe"/>
+                <constraint firstAttribute="trailing" secondItem="evr-gw-Blc" secondAttribute="trailing" id="f6x-1V-ELk"/>
+                <constraint firstItem="6bm-Ow-4UU" firstAttribute="top" secondItem="evr-gw-Blc" secondAttribute="bottom" constant="5" id="fEw-bp-FgD"/>
+                <constraint firstAttribute="trailing" secondItem="6bm-Ow-4UU" secondAttribute="trailing" id="h2Q-00-VF5"/>
+                <constraint firstItem="evr-gw-Blc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ofl-Jk-ZZY"/>
+                <constraint firstAttribute="bottom" secondItem="PiR-ry-k4u" secondAttribute="bottom" constant="10" id="qbg-wr-Tof"/>
+                <constraint firstItem="evr-gw-Blc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="y3q-Uh-Cg8"/>
+                <constraint firstAttribute="trailing" secondItem="BRk-yj-pyz" secondAttribute="trailing" constant="5" id="zyC-J8-jiO"/>
+            </constraints>
+            <size key="customSize" width="143" height="195"/>
+            <point key="canvasLocation" x="-71.5" y="-72.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ico_location" width="12" height="12"/>
+        <image name="live_cell_default_phone" width="103" height="103"/>
+    </resources>
+</document>
