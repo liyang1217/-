@@ -9,10 +9,25 @@
 import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
+    //控件属性
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    
+    //模型属性
+    var group: AnchorGroup?{
+    
+        didSet{
+        
+            titleLabel.text = group?.tag_name
+            //如果没有值的话就返回默认的home_header_hot
+            iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_hot")
+        
+        }
+    }
+
+
+
+
+
 }

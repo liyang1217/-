@@ -20,6 +20,10 @@ private let kHeaderViewID = "kHeaderViewID"
 
 class RecommendViewController: UIViewController {
     //懒加载属性
+    
+    //控制器的ViewModel属性
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         //1. 创建布局
         let layout = UICollectionViewFlowLayout()
@@ -47,9 +51,11 @@ class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //设置UI界面
         setupUI()
-    
+        
+        //发送网络请求
+        loadData()
     }
 }
 
@@ -58,25 +64,31 @@ extension RecommendViewController{
 
     fileprivate func setupUI() {
         view.addSubview(collectionView)
-    
     }
+}
 
+//网络请求
+extension RecommendViewController{
+
+    fileprivate func loadData() {
+    
+        recommendVM.requestData { 
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 //遵守UICollectionViewDataSource协议
 extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return 8
-        } else {
-            return 4
-        }
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,7 +108,12 @@ extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         //1. 取出section的headView
-        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        //2. 取出模型
+        headView.group = recommendVM.anchorGroups[indexPath.section]
+        
+        
         return headView
     }
     

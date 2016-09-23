@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0B80851436030065BB4C4809 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D28295F222CA79DB6B710EF /* Pods___.framework */; };
 		F91B62181D950712006DF694 /* LYNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B62171D950712006DF694 /* LYNetWorkTools.swift */; };
+		F91B621B1D950AF9006DF694 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B621A1D950AF9006DF694 /* RecommendViewModel.swift */; };
+		F91B621D1D950E94006DF694 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B621C1D950E94006DF694 /* NSDateExtension.swift */; };
+		F91B62271D9545C9006DF694 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B62261D9545C8006DF694 /* AnchorModel.swift */; };
+		F91B62291D9545F3006DF694 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B62281D9545F3006DF694 /* AnchorGroup.swift */; };
 		F937BD2E1D9051EC00B70AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BD2D1D9051EC00B70AE2 /* AppDelegate.swift */; };
 		F937BD301D9051EC00B70AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937BD2F1D9051EC00B70AE2 /* ViewController.swift */; };
 		F937BD331D9051EC00B70AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F937BD311D9051EC00B70AE2 /* Main.storyboard */; };
@@ -50,6 +54,10 @@
 		3C83D88EE997F425AC15878E /* Pods-斗鱼.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼.release.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼/Pods-斗鱼.release.xcconfig"; sourceTree = "<group>"; };
 		9308CA347D87A9F053D74CF1 /* Pods-斗鱼.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼.debug.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼/Pods-斗鱼.debug.xcconfig"; sourceTree = "<group>"; };
 		F91B62171D950712006DF694 /* LYNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYNetWorkTools.swift; sourceTree = "<group>"; };
+		F91B621A1D950AF9006DF694 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		F91B621C1D950E94006DF694 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		F91B62261D9545C8006DF694 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		F91B62281D9545F3006DF694 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		F937BD2A1D9051EB00B70AE2 /* 斗鱼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "斗鱼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F937BD2D1D9051EC00B70AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F937BD2F1D9051EC00B70AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +122,14 @@
 				0D28295F222CA79DB6B710EF /* Pods___.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91B62191D950ACC006DF694 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F91B621A1D950AF9006DF694 /* RecommendViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F937BD211D9051EB00B70AE2 = {
@@ -185,6 +201,7 @@
 		F937BD551D90541400B70AE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F91B62191D950ACC006DF694 /* ViewModel */,
 				F937BD6D1D905D4000B70AE2 /* Controller */,
 				F937BD6E1D905D4000B70AE2 /* Model */,
 				F937BD6F1D905D4000B70AE2 /* View */,
@@ -314,6 +331,8 @@
 		F937BD741D905D7B00B70AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F91B62261D9545C8006DF694 /* AnchorModel.swift */,
+				F91B62281D9545F3006DF694 /* AnchorGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +376,7 @@
 			children = (
 				F9FF34FC1D91005F0007EE37 /* UIBarButtonItem-Extension.swift */,
 				F95F75A91D91639000AB3F44 /* UIColorExtension.swift */,
+				F91B621C1D950E94006DF694 /* NSDateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -525,6 +545,7 @@
 			files = (
 				F9FF34FF1D91160C0007EE37 /* PageTitleView.swift in Sources */,
 				F9DF9E3A1D93459100BC8FE2 /* CollectionHeaderView.swift in Sources */,
+				F91B62271D9545C9006DF694 /* AnchorModel.swift in Sources */,
 				F9FF34FD1D91005F0007EE37 /* UIBarButtonItem-Extension.swift in Sources */,
 				F937BD7A1D905E4B00B70AE2 /* MainViewController.swift in Sources */,
 				F95F75A81D91600400AB3F44 /* PageContentView.swift in Sources */,
@@ -533,9 +554,12 @@
 				F937BD2E1D9051EC00B70AE2 /* AppDelegate.swift in Sources */,
 				F937BD7C1D905ED500B70AE2 /* HomeViewController.swift in Sources */,
 				F9FF35011D912F600007EE37 /* Common.swift in Sources */,
+				F91B62291D9545F3006DF694 /* AnchorGroup.swift in Sources */,
 				F9DF9E421D93869100BC8FE2 /* CollectionPrettyCell.swift in Sources */,
 				F9DF9E3E1D937E2D00BC8FE2 /* CollectionNormalCell.swift in Sources */,
+				F91B621D1D950E94006DF694 /* NSDateExtension.swift in Sources */,
 				F9F846051D932C8E00D19958 /* RecommendViewController.swift in Sources */,
+				F91B621B1D950AF9006DF694 /* RecommendViewModel.swift in Sources */,
 				F91B62181D950712006DF694 /* LYNetWorkTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
