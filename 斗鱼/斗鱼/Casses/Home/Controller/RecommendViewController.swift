@@ -48,10 +48,6 @@ class RecommendViewController: UIViewController {
         super.viewDidLoad()
 
         
-        
-        
-
-        
         setupUI()
     
     }
