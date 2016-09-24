@@ -49,7 +49,7 @@ extension RecommendViewModel{
         
         //4. 请求第二部分颜值数据
         disGroup.enter()
-        LYNetWorkTools.GetRequestData(URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { (result) in
+        LYNetWorkTools.GetRequestData(URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0", parameters: ["time": NSDate.getCurrentTime() as NSString]) { (result) in
             
             //1. 将result装换成字典模型
             guard let resultDict = result as? [String: NSObject] else { return }
@@ -66,6 +66,25 @@ extension RecommendViewModel{
             }
             disGroup.leave()
         }
+
+//        disGroup.enter()
+//        LYNetWorkTools.GetRequestData(URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { (result) in
+//            
+//            //1. 将result装换成字典模型
+//            guard let resultDict = result as? [String: NSObject] else { return }
+//            //2. 根据data的key值,获取数据
+//            guard let dataArray = resultDict["data"] as? [[String: NSObject]] else { return }
+//            //3. 遍历数组,取出字典,并且将字典转换成模型对象
+//            //3.1 设置组的属性
+//            self.prettyGroup.tag_name = "颜值"
+//            self.prettyGroup.icon_name = "home_header_phone"
+//            //3.2 获取主播数据
+//            for dict in dataArray{
+//                let anchor = AnchorModel(dict: dict)
+//                self.prettyGroup.anchors.append(anchor)
+//            }
+//            disGroup.leave()
+//        }
         
         //5. 请求后面部分的游戏数据
         //获取当前时间

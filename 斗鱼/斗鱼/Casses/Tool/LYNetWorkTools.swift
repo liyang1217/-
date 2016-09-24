@@ -18,7 +18,8 @@ enum MethodType{
 
 class LYNetWorkTools {
     
-    class func GetRequestData(URLString: String, parameters: [String: NSString]? = nil, responseObject: @escaping (_ result: AnyObject) -> ()){
+    //? = nil
+    class func GetRequestData(URLString: String, parameters: [String: NSString], responseObject: @escaping (_ result: AnyObject) -> ()){
         
         Alamofire.request(URLString).responseJSON { (response) in
             guard let result = response.result.value else {
