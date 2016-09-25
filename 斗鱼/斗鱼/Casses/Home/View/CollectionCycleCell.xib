@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionCycleCell" customModule="斗鱼" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="231" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="231" height="106"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="ukl-gn-6Py"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKW-Px-Jm2">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="barcelona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-kS-8Mw">
+                                <frame key="frameInset" minX="8" minY="5" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="83c-lO-SVx"/>
+                            <constraint firstItem="Fu1-kS-8Mw" firstAttribute="centerY" secondItem="cKW-Px-Jm2" secondAttribute="centerY" id="ee2-g4-FXM"/>
+                            <constraint firstItem="Fu1-kS-8Mw" firstAttribute="leading" secondItem="cKW-Px-Jm2" secondAttribute="leading" constant="15" id="x6w-u6-WlS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ukl-gn-6Py" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1fC-Cp-Thc"/>
+                <constraint firstItem="cKW-Px-Jm2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Ao-NU-PSM"/>
+                <constraint firstItem="ukl-gn-6Py" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HmP-YX-zc2"/>
+                <constraint firstAttribute="trailing" secondItem="ukl-gn-6Py" secondAttribute="trailing" id="IHT-VA-GKe"/>
+                <constraint firstAttribute="bottom" secondItem="cKW-Px-Jm2" secondAttribute="bottom" id="c9k-33-dqm"/>
+                <constraint firstAttribute="trailing" secondItem="cKW-Px-Jm2" secondAttribute="trailing" id="qzc-Vl-dYC"/>
+                <constraint firstAttribute="bottom" secondItem="ukl-gn-6Py" secondAttribute="bottom" id="zeQ-OL-gRP"/>
+            </constraints>
+            <size key="customSize" width="231" height="106"/>
+            <connections>
+                <outlet property="iconImageView" destination="ukl-gn-6Py" id="iL4-t3-KTO"/>
+                <outlet property="titleLabel" destination="Fu1-kS-8Mw" id="fpQ-1X-Vkm"/>
+            </connections>
+            <point key="canvasLocation" x="124.5" y="82"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Img_default" width="172" height="103"/>
+    </resources>
+</document>

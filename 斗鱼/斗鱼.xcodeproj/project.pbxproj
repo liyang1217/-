@@ -28,6 +28,11 @@
 		F95F75A81D91600400AB3F44 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F75A71D91600400AB3F44 /* PageContentView.swift */; };
 		F95F75AA1D91639000AB3F44 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F75A91D91639000AB3F44 /* UIColorExtension.swift */; };
 		F9C7E05B1D96520300287D05 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7E05A1D96520300287D05 /* CollectionBaseCell.swift */; };
+		F9C7E0611D96625800287D05 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7E0601D96625800287D05 /* RecommendCycleView.swift */; };
+		F9C7E0631D96626200287D05 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C7E0621D96626200287D05 /* RecommendCycleView.xib */; };
+		F9C7E0651D967E7900287D05 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7E0641D967E7900287D05 /* CycleModel.swift */; };
+		F9C7E0681D96E2E900287D05 /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7E0661D96E2E900287D05 /* CollectionCycleCell.swift */; };
+		F9C7E0691D96E2E900287D05 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C7E0671D96E2E900287D05 /* CollectionCycleCell.xib */; };
 		F9DF9E3A1D93459100BC8FE2 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DF9E381D93459100BC8FE2 /* CollectionHeaderView.swift */; };
 		F9DF9E3B1D93459100BC8FE2 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DF9E391D93459100BC8FE2 /* CollectionHeaderView.xib */; };
 		F9DF9E3E1D937E2D00BC8FE2 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DF9E3C1D937E2D00BC8FE2 /* CollectionNormalCell.swift */; };
@@ -78,6 +83,11 @@
 		F95F75A71D91600400AB3F44 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		F95F75A91D91639000AB3F44 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F9C7E05A1D96520300287D05 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		F9C7E0601D96625800287D05 /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		F9C7E0621D96626200287D05 /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
+		F9C7E0641D967E7900287D05 /* CycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
+		F9C7E0661D96E2E900287D05 /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
+		F9C7E0671D96E2E900287D05 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		F9DF9E381D93459100BC8FE2 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		F9DF9E391D93459100BC8FE2 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		F9DF9E3C1D937E2D00BC8FE2 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
@@ -287,6 +297,7 @@
 		F937BD6E1D905D4000B70AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9C7E0641D967E7900287D05 /* CycleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +307,10 @@
 			children = (
 				F9DF9E381D93459100BC8FE2 /* CollectionHeaderView.swift */,
 				F9DF9E391D93459100BC8FE2 /* CollectionHeaderView.xib */,
+				F9C7E0601D96625800287D05 /* RecommendCycleView.swift */,
+				F9C7E0621D96626200287D05 /* RecommendCycleView.xib */,
+				F9C7E0661D96E2E900287D05 /* CollectionCycleCell.swift */,
+				F9C7E0671D96E2E900287D05 /* CollectionCycleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +493,8 @@
 				F937BD331D9051EC00B70AE2 /* Main.storyboard in Resources */,
 				F937BD5F1D90583B00B70AE2 /* Live.storyboard in Resources */,
 				F937BD5C1D9057C900B70AE2 /* Home.storyboard in Resources */,
+				F9C7E0631D96626200287D05 /* RecommendCycleView.xib in Resources */,
+				F9C7E0691D96E2E900287D05 /* CollectionCycleCell.xib in Resources */,
 				F9DF9E431D93869100BC8FE2 /* CollectionPrettyCell.xib in Resources */,
 				F937BD671D9058EF00B70AE2 /* Profile.storyboard in Resources */,
 				F937BD621D90585100B70AE2 /* Follow.storyboard in Resources */,
@@ -552,6 +569,7 @@
 				F9FF34FD1D91005F0007EE37 /* UIBarButtonItem-Extension.swift in Sources */,
 				F937BD7A1D905E4B00B70AE2 /* MainViewController.swift in Sources */,
 				F95F75A81D91600400AB3F44 /* PageContentView.swift in Sources */,
+				F9C7E0651D967E7900287D05 /* CycleModel.swift in Sources */,
 				F937BD301D9051EC00B70AE2 /* ViewController.swift in Sources */,
 				F95F75AA1D91639000AB3F44 /* UIColorExtension.swift in Sources */,
 				F937BD2E1D9051EC00B70AE2 /* AppDelegate.swift in Sources */,
@@ -562,8 +580,10 @@
 				F9DF9E421D93869100BC8FE2 /* CollectionPrettyCell.swift in Sources */,
 				F9DF9E3E1D937E2D00BC8FE2 /* CollectionNormalCell.swift in Sources */,
 				F91B621D1D950E94006DF694 /* NSDateExtension.swift in Sources */,
+				F9C7E0611D96625800287D05 /* RecommendCycleView.swift in Sources */,
 				F9F846051D932C8E00D19958 /* RecommendViewController.swift in Sources */,
 				F91B621B1D950AF9006DF694 /* RecommendViewModel.swift in Sources */,
+				F9C7E0681D96E2E900287D05 /* CollectionCycleCell.swift in Sources */,
 				F91B62181D950712006DF694 /* LYNetWorkTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

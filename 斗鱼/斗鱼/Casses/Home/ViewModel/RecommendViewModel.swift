@@ -11,14 +11,17 @@ import UIKit
 class RecommendViewModel {
     //懒加载属性
     lazy var anchorGroups: [AnchorGroup] = [AnchorGroup]()
+    lazy var cycleModels: [CycleModel] = [CycleModel]()
     fileprivate lazy var bigDataGroup: AnchorGroup = AnchorGroup()
     fileprivate lazy var prettyGroup: AnchorGroup = AnchorGroup()
 }
 
 //发送网络请求
+
 extension RecommendViewModel{
     
     //finishCallBack: 请求到数据的回调,用来告诉外界已经请求到数据
+    //请求推荐数据
     func requestData(finishCallBack: @escaping () -> ()){
         //1. 定义参数
         let parameters = ["limit": "4", "offset": "0", "time": NSDate.getCurrentTime() as NSString]
@@ -106,13 +109,26 @@ extension RecommendViewModel{
         disGroup.notify(qos: .default, flags: .detached, queue: DispatchQueue.main) {
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.bigDataGroup, at: 0)
-            
             //回调
             finishCallBack()
         }
     }
     
+    //请求轮播图的数据
+    func requestCycleData(finishCallBack: @escaping () -> ()) {
+    
+        LYNetWorkTools.GetRequestData(URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
+            guard let resultDic = result as? [String : NSObject] else {return}
+            guard let resultArr = resultDic["data"] as? [[String : NSObject]] else {return}
+            //字典转模型对象
+            for dict in resultArr{
+                self.cycleModels.append(CycleModel(dict: dict))
+            }
+            finishCallBack()
+        }
+    }
 }
+
 
 
 

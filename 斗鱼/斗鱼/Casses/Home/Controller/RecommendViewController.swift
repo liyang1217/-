@@ -14,6 +14,9 @@ private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH: CGFloat = 50
 
+private let kCycleViewH: CGFloat = kScreenW * 3 / 8
+
+
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewID"
@@ -23,6 +26,12 @@ class RecommendViewController: UIViewController {
     
     //控制器的ViewModel属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
+    fileprivate lazy var cycleView : RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+    }()
     
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         //1. 创建布局
@@ -63,7 +72,12 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController{
 
     fileprivate func setupUI() {
+        //1.
         view.addSubview(collectionView)
+        //2.
+        collectionView.addSubview(cycleView)
+        //3. 设置collectionView内边距,让cycleView显示
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -71,9 +85,13 @@ extension RecommendViewController{
 extension RecommendViewController{
 
     fileprivate func loadData() {
-    
+        //推荐数据
         recommendVM.requestData { 
             self.collectionView.reloadData()
+        }
+        //轮播数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
         }
     }
 }
@@ -92,36 +110,26 @@ extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         //0. 取出模型
         let group = recommendVM.anchorGroups[indexPath.section]
         let anchor = group.anchors[indexPath.item]
-        
-//        //1. 定义cell
+        //1. 定义cell
         var cell : CollectionBaseCell!
-        
         //2. 取出cell
         if indexPath.section == 1{
-
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
-            
         } else {
          cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
-            
         }
         cell.anchor = anchor
         return cell
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         //1. 取出section的headView
         let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
-        
         //2. 取出模型
         headView.group = recommendVM.anchorGroups[indexPath.section]
-        
-        
         return headView
     }
     
@@ -131,9 +139,7 @@ extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDe
         } else {
             return CGSize(width: kItemW, height: kNormalItemH)
         }
-        
     }
-
 }
 
 
