@@ -14,8 +14,8 @@ private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH: CGFloat = 50
 
+private let kGameWiewH: CGFloat = 90
 private let kCycleViewH: CGFloat = kScreenW * 3 / 8
-
 
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
@@ -24,12 +24,20 @@ private let kHeaderViewID = "kHeaderViewID"
 class RecommendViewController: UIViewController {
     //懒加载属性
     
+    fileprivate lazy var gameView : RecommendGameView = {
+    
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameWiewH, width: kScreenW, height: kGameWiewH)
+        return gameView
+    
+    }()
+    
     //控制器的ViewModel属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
     fileprivate lazy var cycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH - kGameWiewH, width: kScreenW, height: kCycleViewH)
         return cycleView
     }()
     
@@ -74,10 +82,13 @@ extension RecommendViewController{
     fileprivate func setupUI() {
         //1.
         view.addSubview(collectionView)
-        //2.
+        //2.cycleView添加到colectionView
         collectionView.addSubview(cycleView)
-        //3. 设置collectionView内边距,让cycleView显示
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        //3.gameView添加到colectionView
+        collectionView.addSubview(gameView)
+        //4. 设置collectionView内边距,让cycleView显示
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kGameWiewH, left: 0, bottom: 0, right: 0)
+        
     }
 }
 
@@ -86,11 +97,15 @@ extension RecommendViewController{
 
     fileprivate func loadData() {
         //推荐数据
-        recommendVM.requestData { 
+        recommendVM.requestData {
+            //1. 展示推荐数据
             self.collectionView.reloadData()
+            //2. 将数据传递给GameView
+            self.gameView.groups = self.recommendVM.anchorGroups
         }
         //轮播数据
         recommendVM.requestCycleData {
+            
             self.cycleView.cycleModels = self.recommendVM.cycleModels
         }
     }

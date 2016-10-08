@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="斗鱼" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实况足球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-aL-jiy">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="udD-OG-f3S"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-YJ-2EE">
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Omh-YJ-2EE" secondAttribute="height" multiplier="1:1" id="Nz8-Ax-Gpg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="22.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="fp8-aL-jiy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Anu-Hf-vgX"/>
+                <constraint firstItem="Omh-YJ-2EE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GFi-4A-weB"/>
+                <constraint firstAttribute="bottom" secondItem="fp8-aL-jiy" secondAttribute="bottom" constant="10" id="YD4-2X-3y3"/>
+                <constraint firstItem="Omh-YJ-2EE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="crD-OV-IJr"/>
+                <constraint firstItem="fp8-aL-jiy" firstAttribute="top" secondItem="Omh-YJ-2EE" secondAttribute="bottom" constant="5" id="kEz-EO-oS5"/>
+            </constraints>
+            <size key="customSize" width="157" height="156"/>
+            <connections>
+                <outlet property="iconImageView" destination="Omh-YJ-2EE" id="pQr-Wl-gZw"/>
+                <outlet property="titleLabel" destination="fp8-aL-jiy" id="PhU-9R-a6P"/>
+            </connections>
+            <point key="canvasLocation" x="-103" y="-98"/>
+        </collectionViewCell>
+    </objects>
+</document>

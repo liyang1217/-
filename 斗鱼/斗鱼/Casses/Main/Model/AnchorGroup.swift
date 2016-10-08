@@ -21,10 +21,14 @@ class AnchorGroup: NSObject {
     }
     //组显示的标题
     var tag_name: String = ""
+    //游戏对应图标
+    var icon_url: String = ""
     //组显示的图标
     var icon_name: String = "home_header_normal"
     //定义主播模型的对象数组
     lazy var anchors: [AnchorModel] = [AnchorModel]()
+    
+    
     //构造函数
     override init(){
         

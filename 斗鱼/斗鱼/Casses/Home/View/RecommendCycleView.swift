@@ -76,7 +76,6 @@ extension RecommendCycleView : UICollectionViewDataSource{
          cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
         return cell
     }
-
 }
 
 //遵守UIcollectionViewDelegate协议
@@ -90,7 +89,6 @@ extension RecommendCycleView : UICollectionViewDelegate{
         pageController.currentPage = Int(offSetX / scrollView.bounds.width) % (cycleModels?.count ?? 1)
     }
 
-    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         //手动滚动的时候就不让自动滚动
         removeCycleTimer()
@@ -99,7 +97,6 @@ extension RecommendCycleView : UICollectionViewDelegate{
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         addCycleTimer()
     }
-    
 }
 
 //对定时器的操作方法
@@ -115,19 +112,15 @@ extension RecommendCycleView{
         //运行循环中移除
         cycleTimer?.invalidate()
         cycleTimer = nil
-    
     }
     
     @objc private func  scrollToNext(){
-    
         //1. 获取滚到的偏移量
         let currentOffsetX = collectionView.contentOffset.x
         let offsetX = currentOffsetX + collectionView.bounds.width
         //2. 滚动到该位置
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
-    
     }
-
 }
 
 

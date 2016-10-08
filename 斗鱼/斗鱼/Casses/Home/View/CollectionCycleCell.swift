@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionCycleCell: UICollectionViewCell {
 
@@ -18,8 +19,10 @@ class CollectionCycleCell: UICollectionViewCell {
         didSet{
             titleLabel.text = cycleModel?.title
             let URL = NSURL(string: (cycleModel?.pic_url)!)
-            let data = NSData.init(contentsOf: URL as! URL)
-            iconImageView.image = UIImage.init(data: data as! Data)
+            let resource = ImageResource.init(downloadURL: URL as! URL)
+            iconImageView.kf.setImage(with: resource)
+//            let data = NSData.init(contentsOf: URL as! URL)
+//            iconImageView.image = UIImage.init(data: data as! Data)
         }
     }
 }

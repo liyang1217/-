@@ -19,7 +19,7 @@ enum MethodType{
 class LYNetWorkTools {
     
     //? = nil
-    class func GetRequestData(URLString: String, parameters: [String: NSString], responseObject: @escaping (_ result: AnyObject) -> ()){
+    class func GetRequestData(URLString: String, parameters: [String: Any], responseObject: @escaping (_ result: AnyObject) -> ()){
         
         Alamofire.request(URLString).responseJSON { (response) in
             guard let result = response.result.value else {
@@ -31,7 +31,7 @@ class LYNetWorkTools {
         
     }
     
-    class func PostRequestData(URLString: String, parameters: [String: NSString]? = nil, responseObject: @escaping (_ result: AnyObject) -> ()){
+    class func PostRequestData(URLString: String, parameters: [String: Any]? = nil, responseObject: @escaping (_ result: AnyObject) -> ()){
         
         Alamofire.request(URLString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             guard let result = response.result.value else{
@@ -42,10 +42,7 @@ class LYNetWorkTools {
             }
 
             responseObject(result as AnyObject)
-        
         }
-
-        
     }
 
 }
