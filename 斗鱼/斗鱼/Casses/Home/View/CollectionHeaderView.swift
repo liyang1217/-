@@ -14,6 +14,7 @@ class CollectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
+    @IBOutlet weak var moreBtn: UIButton!
     //模型属性
     var group: AnchorGroup?{
     

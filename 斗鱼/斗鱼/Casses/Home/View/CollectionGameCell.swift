@@ -14,28 +14,26 @@ class CollectionGameCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     //定义模型属性
-    var group : AnchorGroup?{
+    var baseGame : BaseGameModel?{
         didSet{
         
-            titleLabel.text = group?.tag_name
+            titleLabel.text = baseGame?.tag_name
             
-            if let iconURL = URL(string: group?.icon_url ?? ""){
+            if let iconURL = URL(string: baseGame?.icon_url ?? ""){
                 iconImageView.kf.setImage(with: iconURL)
             } else {
                 iconImageView.image = UIImage(named:"home_more_btn")
             }
-            
-//            let URL = NSURL(string: group?.icon_url ?? "")!
-//            let resource = ImageResource(downloadURL: URL as URL, cacheKey: "")
-//            iconImageView.kf.setImage(with: resource, placeholder: UIImage.init(named: "home_header_hot"), options: nil, progressBlock: nil, completionHandler: nil)
-            
-            
-            
-            
         }
-    
     }
-    
-    
-    
 }
+
+
+
+
+
+
+
+
+
+

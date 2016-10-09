@@ -21,7 +21,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_header_phone" translatesAutoresizingMaskIntoConstraints="NO" id="mMC-Fr-2DB">
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="I1X-Tf-XYv"/>
-                        <constraint firstAttribute="width" constant="18" id="ztV-nM-2cQ"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-yK-rZW">
@@ -54,6 +53,7 @@
             </constraints>
             <connections>
                 <outlet property="iconImageView" destination="mMC-Fr-2DB" id="iMB-U7-jXH"/>
+                <outlet property="moreBtn" destination="A2l-Pm-N5f" id="94W-7K-Q9f"/>
                 <outlet property="titleLabel" destination="PzP-yK-rZW" id="8bl-i8-YMJ"/>
             </connections>
         </collectionReusableView>
